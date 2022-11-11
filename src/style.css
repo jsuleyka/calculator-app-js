@@ -14,18 +14,134 @@ body {
   font-weight: bold;
 }
 
+.theme-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .theme-container, .screen-container, .calc-container {
   border-radius: 10px;
-  width: 300px;
+  /* width: 300px; */
 }
 
 .theme-container p strong {
   color: white;
-  font-size: 28px;
+  font-size: 32px;
+}
+
+.theme-container .title {
+  color: white;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  margin-bottom: 5px;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.switch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.switch-container .number {
+  color: white;
+  font-size: 13px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.switch {
+  position: relative;
+}
+
+.switch #switch1, .switch #switch2, .switch #switch3 {
+  position: absolute;
+  z-index: 9;
+  -webkit-appearance: none;
+}
+
+.switch #switch1 + label::after, .switch #switch2 + label::after, .switch #switch3 + label::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.switch #switch1 + label::after {
+  left: 0;
+}
+
+.switch #switch1:checked ~ .switch__inner {
+  background-color: hsl(223, 31%, 20%);
+  transition: background-color 200ms ease-in-out;
+}
+
+.switch #switch1:checked ~ .switch__inner::after {
+  left: 6px;
+  transition: left 200ms ease-in-out;
+}
+
+.switch #switch2 + label::after {
+  left: 20px;
+}
+
+.switch #switch2:checked ~ .switch__inner {
+  background-color: hsl(223, 31%, 20%);
+  transition: background-color 200ms ease-in-out;
+}
+
+.switch #switch2:checked ~ .switch__inner::after {
+  left: 28px;
+  transition: left 200ms ease-in-out;
+}
+
+.switch #switch3 + label::after {
+  left: 40px;
+}
+
+.switch #switch3:checked ~ .switch__inner {
+  background-color: hsl(223, 31%, 20%);
+  transition: background-color 200ms ease-in-out;
+}
+
+.switch #switch3:checked ~ .switch__inner::after {
+  left: 52px;
+  transition: left 200ms ease-in-out;
+}
+
+.switch__inner {
+  background-color: #fff;
+  border-radius: 100px;
+  height: 25px;
+  width: 75px;
+}
+
+.switch__inner::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 17px;
+  height: 17px;
+  top: 4px;
+  left: 0;
+  background-color: hsl(6, 63%, 50%);
+  border-radius: 100px;
+  transition: left 200ms ease-in-out;
 }
 
 .screen-container {
   background-color: hsl(224, 36%, 15%);
+  height: 42px;
   margin-bottom: 20px;
   padding: 25px;
 }
@@ -50,8 +166,13 @@ body {
   margin-bottom: 20px;
 }
 
+/* .calc-container .row.flex-end {
+  justify-content: flex-end
+} */
+
 .calc-container .row.last-row {
   margin-bottom: 0;
+  width: 291px;
 }
 
 .calc-container .row.flex-end a {
@@ -59,21 +180,28 @@ body {
 }
 
 .calc-container .row button {
-  background-color: white;
+  background-color: hsl(30, 25%, 89%);
   border-radius: 5px;
   border-width: 0;
   box-shadow: 0px 1px 0px hsl(28, 16%, 65%),
   0px 2px 0px hsl(28, 16%, 65%),
   0px 3px 0px hsl(28, 16%, 65%),
   0px 4px 0px hsl(28, 16%, 65%);
-
+  color: hsl(221, 14%, 31%);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 60px;
   text-transform: uppercase;
-  width: 65px;
+  width: 60px;
+}
+
+.calc-container .row button:active,
+.calc-container .row button:hover,
+.calc-container .row button:focus,
+.calc-container .row button:visited {
+  background-color: white;
 }
 
 .calc-container .row button.x-button {
@@ -91,8 +219,19 @@ body {
   text-transform: uppercase;
 }
 
+.calc-container .row button.del-button:active,
+.calc-container .row button.del-button:hover,
+.calc-container .row button.del-button:focus,
+.calc-container .row button.del-button:visited, 
+.calc-container .row button.reset-button:active,
+.calc-container .row button.reset-button:hover,
+.calc-container .row button.reset-button:focus,
+.calc-container .row button.reset-button:visited {
+  background-color: hsl(225, 46%, 67%);
+}
+
 .calc-container .row button.reset-button, .calc-container .row button.equal-button {
-  width: 102px;
+  width: 138px;
 }
 
 .calc-container .row button.equal-button {
@@ -103,6 +242,13 @@ body {
   0px 4px 0px hsl(6, 70%, 34%);
   color: white;
   font-size: 20px;
+}
+
+.calc-container .row button.equal-button:active,
+.calc-container .row button.equal-button:hover,
+.calc-container .row button.equal-button:focus,
+.calc-container .row button.equal-button:visited {
+  background-color: hsl(6, 72%, 58%);
 }
 
 .attribution {
