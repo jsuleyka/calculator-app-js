@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <section class="app-container">
+    <div class="theme-container">
+      <p><strong>calc</strong></p>
+    </div>
+
+    <div class="screen-container">
+      <p id="screen">399,981</p>
+    </div>
+
+    <div class="calc-container">
+      <div class="row">
+        <button id="seven" value="7">7</button>
+        <button id="eight" value="8">8</button>
+        <button id="nine" value="9">9</button>
+        <button class="del-button">Del</button>
+      </div>
+
+      <div class="row">
+        <button id="four" value="4">4</button>
+        <button id="five" value="5">5</button>
+        <button id="six" value="6">6</button>
+        <button id="sum">+</button>
+      </div>
+
+      <div class="row">
+        <button id="one" value="1">1</button>
+        <button id="two" value="2">2</button>
+        <button id="three" value="3">3</button>
+        <button id="sub">-</button>
+      </div>
+
+      <div class="row flex-end">
+        <button id="point" value=".">.</button>
+        <button id="zero" value="0">0</button>
+        <button id="div">/</button>
+        <button id="mult" class="x-button">x</button>
+      </div>
+
+      <div class="row last-row">
+        <button id="reset" class="reset-button">Reset</button>
+        <button id="equal" class="equal-button">=</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/jsuleyka" target="_blank">Suleyka Juarez</a>.</p>
+  </div>
+
+  <script src="./src/main.js"></script>
+</body>
+</html>

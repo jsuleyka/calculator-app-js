@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+body {
+  background-color: hsl(222, 26%, 31%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+* {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.theme-container, .screen-container, .calc-container {
+  border-radius: 10px;
+  width: 300px;
+}
+
+.theme-container p strong {
+  color: white;
+  font-size: 28px;
+}
+
+.screen-container {
+  background-color: hsl(224, 36%, 15%);
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.screen-container p {
+  color: white;
+  font-size: 45px;
+  margin: 0;
+  text-align: right;
+}
+
+.calc-container {
+  background-color: hsl(223, 31%, 20%);
+  padding: 25px;
+}
+
+.calc-container .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.calc-container .row.last-row {
+  margin-bottom: 0;
+}
+
+.calc-container .row.flex-end a {
+  /* align-items: flex-end; */
+}
+
+.calc-container .row button {
+  background-color: white;
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 0px 1px 0px hsl(28, 16%, 65%),
+  0px 2px 0px hsl(28, 16%, 65%),
+  0px 3px 0px hsl(28, 16%, 65%),
+  0px 4px 0px hsl(28, 16%, 65%);
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  text-transform: uppercase;
+  width: 65px;
+}
+
+.calc-container .row button.x-button {
+  font-size: 20px;
+}
+
+.calc-container .row button.del-button, .calc-container .row button.reset-button {
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0px 1px 0px hsl(224, 28%, 35%),
+  0px 2px 0px hsl(224, 28%, 35%),
+  0px 3px 0px hsl(224, 28%, 35%),
+  0px 4px 0px hsl(224, 28%, 35%);
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.calc-container .row button.reset-button, .calc-container .row button.equal-button {
+  width: 102px;
+}
+
+.calc-container .row button.equal-button {
+  background-color: hsl(6, 63%, 50%);
+  box-shadow: 0px 1px 0px hsl(6, 70%, 34%),
+  0px 2px 0px hsl(6, 70%, 34%),
+  0px 3px 0px hsl(6, 70%, 34%),
+  0px 4px 0px hsl(6, 70%, 34%);
+  color: white;
+  font-size: 20px;
+}
+
+.attribution {
+  background-color: hsl(227, 35%, 25%);
+  margin-top: 200px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.attribution p,
+.attribution p a {
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.attribution p a {
+  color: hsl(25, 97%, 53%);
+  text-decoration: none;
+}
+
+.attribution p a:active,
+.attribution p a:hover,
+.attribution p a:focus,
+.attribution p a:visited {
+  text-decoration: underline;
+}
