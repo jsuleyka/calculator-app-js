@@ -1,3 +1,8 @@
+const body = document.querySelector('body');
+const clSwitch1 = document.getElementById('switch1');
+const clSwitch2 = document.getElementById('switch2');
+const clSwitch3 = document.getElementById('switch3');
+
 const screen = document.getElementById('screen');
 const del = document.getElementById('del');
 const reset = document.getElementById('reset');
@@ -20,6 +25,18 @@ const nine = document.getElementById('nine');
 const zero = document.getElementById('zero');
 const dec = document.getElementById('dec');
 let operandoa, operandob, operacion, res = 0;
+
+clSwitch1.addEventListener('click', (e) => {
+  body.className = '';
+});
+
+clSwitch2.addEventListener('click', (e) => {
+  body.className = 'theme2';
+});
+
+clSwitch3.addEventListener('click', (e) => {
+  body.className = 'theme3';
+});
 
 one.addEventListener('click', (e) => {
   screen.textContent = screen.textContent + one.value;

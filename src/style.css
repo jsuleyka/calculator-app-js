@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
 
 body {
   background-color: hsl(222, 26%, 31%);
@@ -9,7 +9,7 @@ body {
 }
 
 * {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-size: 32px;
   font-weight: bold;
 }
@@ -20,17 +20,21 @@ body {
   justify-content: space-between;
 }
 
-.theme-container, .screen-container, .calc-container {
+/********************* Theme 1 ************************/
+
+.theme-container,
+.screen-container,
+.calc-container {
   border-radius: 10px;
   /* width: 300px; */
 }
 
-.theme-container p strong {
+body .theme-container p strong {
   color: white;
   font-size: 32px;
 }
 
-.theme-container .title {
+body .theme-container .title {
   color: white;
   font-size: 13px;
   letter-spacing: 1.2px;
@@ -50,7 +54,7 @@ body {
   align-items: center;
 }
 
-.switch-container .number {
+body .switch-container .number {
   color: white;
   font-size: 13px;
   margin: 0;
@@ -61,13 +65,17 @@ body {
   position: relative;
 }
 
-.switch #switch1, .switch #switch2, .switch #switch3 {
+.switch #switch1,
+.switch #switch2,
+.switch #switch3 {
   position: absolute;
   z-index: 9;
   -webkit-appearance: none;
 }
 
-.switch #switch1 + label::after, .switch #switch2 + label::after, .switch #switch3 + label::after {
+.switch #switch1+label::after,
+.switch #switch2+label::after,
+.switch #switch3+label::after {
   position: absolute;
   content: "";
   width: 20px;
@@ -77,44 +85,47 @@ body {
   z-index: 10;
 }
 
-.switch #switch1 + label::after {
+.switch #switch1+label::after {
   left: 0;
 }
 
-.switch #switch1:checked ~ .switch__inner {
+body .switch #switch1:checked~.switch__inner {
   background-color: hsl(223, 31%, 20%);
   transition: background-color 200ms ease-in-out;
 }
 
-.switch #switch1:checked ~ .switch__inner::after {
+.switch #switch1:checked~.switch__inner::after {
+  background-color: hsl(6, 63%, 50%);
   left: 6px;
   transition: left 200ms ease-in-out;
 }
 
-.switch #switch2 + label::after {
+.switch #switch2+label::after {
   left: 20px;
 }
 
-.switch #switch2:checked ~ .switch__inner {
+body .switch #switch2:checked~.switch__inner {
   background-color: hsl(223, 31%, 20%);
   transition: background-color 200ms ease-in-out;
 }
 
-.switch #switch2:checked ~ .switch__inner::after {
+.switch #switch2:checked~.switch__inner::after {
+  background-color: hsl(25, 98%, 40%);
   left: 28px;
   transition: left 200ms ease-in-out;
 }
 
-.switch #switch3 + label::after {
+.switch #switch3+label::after {
   left: 40px;
 }
 
-.switch #switch3:checked ~ .switch__inner {
+body .switch #switch3:checked~.switch__inner {
   background-color: hsl(223, 31%, 20%);
   transition: background-color 200ms ease-in-out;
 }
 
-.switch #switch3:checked ~ .switch__inner::after {
+.switch #switch3:checked~.switch__inner::after {
+  background-color: hsl(176, 100%, 44%);
   left: 52px;
   transition: left 200ms ease-in-out;
 }
@@ -139,21 +150,21 @@ body {
   transition: left 200ms ease-in-out;
 }
 
-.screen-container {
+body .screen-container {
   background-color: hsl(224, 36%, 15%);
   height: 42px;
   margin-bottom: 20px;
   padding: 25px;
 }
 
-.screen-container p {
+body .screen-container p {
   color: white;
   font-size: 45px;
   margin: 0;
   text-align: right;
 }
 
-.calc-container {
+body .calc-container {
   background-color: hsl(223, 31%, 20%);
   padding: 25px;
 }
@@ -166,27 +177,17 @@ body {
   margin-bottom: 20px;
 }
 
-/* .calc-container .row.flex-end {
-  justify-content: flex-end
-} */
-
 .calc-container .row.last-row {
   margin-bottom: 0;
   width: 291px;
 }
 
-.calc-container .row.flex-end a {
-  /* align-items: flex-end; */
-}
-
-.calc-container .row button {
+body .calc-container .row button {
   background-color: hsl(30, 25%, 89%);
   border-radius: 5px;
   border-width: 0;
-  box-shadow: 0px 1px 0px hsl(28, 16%, 65%),
-  0px 2px 0px hsl(28, 16%, 65%),
-  0px 3px 0px hsl(28, 16%, 65%),
-  0px 4px 0px hsl(28, 16%, 65%);
+  box-shadow: 0px 1px 0px hsl(28, 16%, 65%), 0px 2px 0px hsl(28, 16%, 65%),
+    0px 3px 0px hsl(28, 16%, 65%), 0px 4px 0px hsl(28, 16%, 65%);
   color: hsl(221, 14%, 31%);
   cursor: pointer;
   display: flex;
@@ -197,10 +198,10 @@ body {
   width: 60px;
 }
 
-.calc-container .row button:active,
-.calc-container .row button:hover,
-.calc-container .row button:focus,
-.calc-container .row button:visited {
+body .calc-container .row button:active,
+body .calc-container .row button:hover,
+body .calc-container .row button:focus,
+body .calc-container .row button:visited {
   background-color: white;
 }
 
@@ -208,46 +209,44 @@ body {
   font-size: 20px;
 }
 
-.calc-container .row button.del-button, .calc-container .row button.reset-button {
+body .calc-container .row button.del-button,
+body .calc-container .row button.reset-button {
   background-color: hsl(225, 21%, 49%);
-  box-shadow: 0px 1px 0px hsl(224, 28%, 35%),
-  0px 2px 0px hsl(224, 28%, 35%),
-  0px 3px 0px hsl(224, 28%, 35%),
-  0px 4px 0px hsl(224, 28%, 35%);
+  box-shadow: 0px 1px 0px hsl(224, 28%, 35%), 0px 2px 0px hsl(224, 28%, 35%),
+    0px 3px 0px hsl(224, 28%, 35%), 0px 4px 0px hsl(224, 28%, 35%);
   color: white;
-  font-size: 20px;
+  font-size: 23px;
   text-transform: uppercase;
 }
 
-.calc-container .row button.del-button:active,
-.calc-container .row button.del-button:hover,
-.calc-container .row button.del-button:focus,
-.calc-container .row button.del-button:visited, 
-.calc-container .row button.reset-button:active,
-.calc-container .row button.reset-button:hover,
-.calc-container .row button.reset-button:focus,
-.calc-container .row button.reset-button:visited {
+body .calc-container .row button.del-button:active,
+body .calc-container .row button.del-button:hover,
+body .calc-container .row button.del-button:focus,
+body .calc-container .row button.del-button:visited,
+body .calc-container .row button.reset-button:active,
+body .calc-container .row button.reset-button:hover,
+body .calc-container .row button.reset-button:focus,
+body .calc-container .row button.reset-button:visited {
   background-color: hsl(225, 46%, 67%);
 }
 
-.calc-container .row button.reset-button, .calc-container .row button.equal-button {
+.calc-container .row button.reset-button,
+.calc-container .row button.equal-button {
   width: 138px;
 }
 
-.calc-container .row button.equal-button {
+body .calc-container .row button.equal-button {
   background-color: hsl(6, 63%, 50%);
-  box-shadow: 0px 1px 0px hsl(6, 70%, 34%),
-  0px 2px 0px hsl(6, 70%, 34%),
-  0px 3px 0px hsl(6, 70%, 34%),
-  0px 4px 0px hsl(6, 70%, 34%);
+  box-shadow: 0px 1px 0px hsl(6, 70%, 34%), 0px 2px 0px hsl(6, 70%, 34%),
+    0px 3px 0px hsl(6, 70%, 34%), 0px 4px 0px hsl(6, 70%, 34%);
   color: white;
   font-size: 20px;
 }
 
-.calc-container .row button.equal-button:active,
-.calc-container .row button.equal-button:hover,
-.calc-container .row button.equal-button:focus,
-.calc-container .row button.equal-button:visited {
+body .calc-container .row button.equal-button:active,
+body .calc-container .row button.equal-button:hover,
+body .calc-container .row button.equal-button:focus,
+body .calc-container .row button.equal-button:visited {
   background-color: hsl(6, 72%, 58%);
 }
 
@@ -276,4 +275,196 @@ body {
 .attribution p a:focus,
 .attribution p a:visited {
   text-decoration: underline;
+}
+
+/********************* Theme 2 ************************/
+
+body.theme2 {
+  background-color: hsl(0, 0%, 90%);
+}
+
+body.theme2 .theme-container p strong,
+body.theme2 .theme-container .title,
+body.theme2 .switch-container .number,
+body.theme2 .screen-container p {
+  color: hsl(60, 10%, 19%);
+}
+
+body.theme2 .screen-container {
+  background-color: hsl(0, 0%, 93%);
+}
+
+body.theme2 .switch #switch2:checked~.switch__inner,
+body.theme2 .calc-container {
+  background-color: hsl(0, 5%, 81%);
+}
+
+body.theme2 .calc-container .row button {
+  background-color: hsl(45, 7%, 89%);
+  box-shadow: 0px 1px 0px hsl(35, 11%, 61%), 0px 2px 0px hsl(35, 11%, 61%),
+    0px 3px 0px hsl(35, 11%, 61%), 0px 4px 0px hsl(35, 11%, 61%);
+  color: hsl(60, 10%, 19%);
+}
+
+body.theme2 .calc-container .row button:active,
+body.theme2 .calc-container .row button:hover,
+body.theme2 .calc-container .row button:focus,
+body.theme2 .calc-container .row button:visited {
+  background-color: white;
+}
+
+body.theme2 .calc-container .row button.del-button,
+body.theme2 .calc-container .row button.reset-button {
+  background-color: hsl(185, 42%, 37%);
+  box-shadow: 0px 1px 0px hsl(185, 58%, 25%), 0px 2px 0px hsl(185, 58%, 25%),
+    0px 3px 0px hsl(185, 58%, 25%), 0px 4px 0px hsl(185, 58%, 25%);
+  color: hsl(0, 0%, 100%);
+}
+
+body.theme2 .calc-container .row button.del-button:active,
+body.theme2 .calc-container .row button.del-button:hover,
+body.theme2 .calc-container .row button.del-button:focus,
+body.theme2 .calc-container .row button.del-button:visited,
+body.theme2 .calc-container .row button.reset-button:active,
+body.theme2 .calc-container .row button.reset-button:hover,
+body.theme2 .calc-container .row button.reset-button:focus,
+body.theme2 .calc-container .row button.reset-button:visited {
+  background-color: hsl(185, 38%, 55%);
+}
+
+body.theme2 .calc-container .row button.equal-button {
+  background-color: hsl(25, 98%, 40%);
+  box-shadow: 0px 1px 0px hsl(25, 99%, 27%), 0px 2px 0px hsl(25, 99%, 27%),
+    0px 3px 0px hsl(25, 99%, 27%), 0px 4px 0px hsl(25, 99%, 27%);
+  color: hsl(0, 0%, 100%);
+}
+
+body.theme2 .calc-container .row button.equal-button:active,
+body.theme2 .calc-container .row button.equal-button:hover,
+body.theme2 .calc-container .row button.equal-button:focus,
+body.theme2 .calc-container .row button.equal-button:visited {
+  background-color: hsl(25, 75%, 59%);
+}
+
+/********************* Theme 3 ************************/
+
+body.theme3 {
+  background-color: hsl(268, 75%, 9%);
+}
+
+body.theme3 .theme-container p strong,
+body.theme3 .theme-container .title,
+body.theme3 .switch-container .number,
+body.theme3 .screen-container p {
+  color: hsl(52, 100%, 62%);
+}
+
+body.theme3 .screen-container,
+body.theme3 .switch #switch3:checked~.switch__inner,
+body.theme3 .calc-container {
+  background-color: hsl(268, 71%, 12%);
+}
+
+body.theme3 .calc-container .row button {
+  background-color: hsl(268, 47%, 21%);
+  box-shadow: 0px 1px 0px hsl(290, 70%, 36%), 0px 2px 0px hsl(290, 70%, 36%),
+    0px 3px 0px hsl(290, 70%, 36%), 0px 4px 0px hsl(290, 70%, 36%);
+  color: hsl(52, 100%, 62%);
+}
+
+body.theme3 .calc-container .row button:active,
+body.theme3 .calc-container .row button:hover,
+body.theme3 .calc-container .row button:focus,
+body.theme3 .calc-container .row button:visited {
+  background-color: hsl(268, 45%, 43%);
+}
+
+body.theme3 .calc-container .row button.del-button,
+body.theme3 .calc-container .row button.reset-button {
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0px 1px 0px hsl(285, 91%, 52%), 0px 2px 0px hsl(285, 91%, 52%),
+    0px 3px 0px hsl(285, 91%, 52%), 0px 4px 0px hsl(285, 91%, 52%);
+  color: hsl(0, 0%, 100%);
+}
+
+body.theme3 .calc-container .row button.del-button:active,
+body.theme3 .calc-container .row button.del-button:hover,
+body.theme3 .calc-container .row button.del-button:focus,
+body.theme3 .calc-container .row button.del-button:visited,
+body.theme3 .calc-container .row button.reset-button:active,
+body.theme3 .calc-container .row button.reset-button:hover,
+body.theme3 .calc-container .row button.reset-button:focus,
+body.theme3 .calc-container .row button.reset-button:visited {
+  background-color: hsl(281, 73%, 38%);
+}
+
+body.theme3 .calc-container .row button.equal-button {
+  background-color: hsl(176, 100%, 44%);
+  box-shadow: 0px 1px 0px hsl(177, 92%, 70%), 0px 2px 0px hsl(177, 92%, 70%),
+    0px 3px 0px hsl(177, 92%, 70%), 0px 4px 0px hsl(177, 92%, 70%);
+  color: hsl(198, 20%, 13%);
+}
+
+body.theme3 .calc-container .row button.equal-button:active,
+body.theme3 .calc-container .row button.equal-button:hover,
+body.theme3 .calc-container .row button.equal-button:focus,
+body.theme3 .calc-container .row button.equal-button:visited {
+  background-color: hsl(177, 92%, 70%);
+}
+@media (min-width: 1440px) {
+
+  body .theme-container,
+  body .screen-container,
+  body .calc-container {
+    width: 420px;
+  }
+
+  body .theme-container {
+    width: 482px;
+  }
+  
+  body .theme-container .title,
+  body .switch-container .number {
+    font-size: 11px;
+  }
+
+  body .theme-container .title {
+    margin-right: 25px;
+  }
+
+  body .screen-container {
+    padding: 32px;
+    padding-top: 40px;
+  }
+
+  body .screen-container p {
+    font-size: 48px;
+  }
+
+  body .calc-container {
+    padding: 32px;
+  }
+
+  .calc-container .row {
+    margin-bottom: 27px;
+  }
+
+  body .calc-container .row button {
+    height: 50px;
+    width: 90px;
+  }
+
+  body .calc-container .row button.del-button,
+  body .calc-container .row button.reset-button {
+    font-size: 25px;
+  }
+
+  .calc-container .row.last-row {
+    width: auto;
+  }
+
+  .calc-container .row button.reset-button,
+  .calc-container .row button.equal-button {
+    width: 202px;
+  }
 }
