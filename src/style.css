@@ -6,6 +6,7 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 0;
+  margin-top: 50px;
 }
 
 * {
@@ -250,23 +251,22 @@ body .calc-container .row button.equal-button:visited {
   background-color: hsl(6, 72%, 58%);
 }
 
-.attribution {
-  background-color: hsl(227, 35%, 25%);
+body .attribution {
+  background-color: hsl(224, 36%, 15%);
   margin-top: 200px;
   padding: 10px 0;
   text-align: center;
   width: 100%;
 }
 
-.attribution p,
-.attribution p a {
+body .attribution p,
+body .attribution p a {
   color: white;
   font-size: 20px;
-  font-weight: normal;
 }
 
-.attribution p a {
-  color: hsl(25, 97%, 53%);
+body .attribution p a {
+  color: hsl(6, 63%, 50%);
   text-decoration: none;
 }
 
@@ -346,6 +346,18 @@ body.theme2 .calc-container .row button.equal-button:visited {
   background-color: hsl(25, 75%, 59%);
 }
 
+body.theme2 .attribution {
+  background-color: hsl(0, 0%, 93%);
+}
+
+body.theme2 .attribution p {
+  color: hsl(60, 10%, 19%);
+}
+
+body.theme2 .attribution p a {
+  color: hsl(25, 98%, 40%);
+}
+
 /********************* Theme 3 ************************/
 
 body.theme3 {
@@ -411,6 +423,19 @@ body.theme3 .calc-container .row button.equal-button:focus,
 body.theme3 .calc-container .row button.equal-button:visited {
   background-color: hsl(177, 92%, 70%);
 }
+
+body.theme3 .attribution {
+  background-color: hsl(268, 71%, 12%);
+}
+
+body.theme3 .attribution p {
+  color: hsl(52, 100%, 62%);
+}
+
+body.theme3 .attribution p a {
+  color: hsl(176, 100%, 44%);
+}
+
 @media (min-width: 1440px) {
 
   body .theme-container,

@@ -72,32 +72,32 @@ dec.addEventListener('click', (e) => {
   screen.textContent = screen.textContent + dec.value;
 });
 
-sum.addEventListener('keydown', (e) => {
-  // screen.textContent = screen.textContent + sum.textContent;
-  console.log(e.key);
-  operandoa = screen.textContent;
+sum.addEventListener('click', (e) => {
+  validOperando(operandoa);
   operacion = "+";
   delet();
-  e.stopImmediatePropagation();
+  sum.setAttribute('disabled', '');
 });
 
 sub.addEventListener('click', (e) => {
-  operandoa = screen.textContent;
+  validOperando(operandoa); 
   operacion = "-";
   delet();
+  sub.setAttribute('disabled', '');
 });
 
 mult.addEventListener('click', (e) => {
-  // screen.textContent = screen.textContent;
-  operandoa = screen.textContent;
+  validOperando(operandoa); 
   operacion = "x";
   delet();
+  mult.setAttribute('disabled', '');
 });
 
 div.addEventListener('click', (e) => {
-  operandoa = screen.textContent;
+  validOperando(operandoa);
   operacion = "/";
   delet();
+  div.setAttribute('disabled', '');
 });
 
 del.addEventListener('click', (e) => {
@@ -109,48 +109,77 @@ reset.addEventListener('click', (e) => {
 });
 
 equal.addEventListener('click', (e) => {
-  operandob = screen.textContent;
-  console.log(operandob);
-  if (isNaN(screen.textContent) || screen.textContent !== "" || screen.textContent != ".") {
+  validOperando(operandob); 
+  console.log(validOperando(operandob));
     resolve();
-  }
-  else{
-    alert('Por favor ingrese valores para realizar los cálculos.');
-  }
 });
+
+const validOperando = (x) => {
+  x = screen.textContent;
+  console.log(x);
+  if (x === undefined) {
+    x = 0;
+  }
+
+  if (x === NaN) {
+    x = 0;
+  }
+
+  if (x === '') {
+    x = 0;
+    console.log(x);
+  }
+  return x;
+}
 
 const delet = () => {
   screen.textContent = "";
+  resetDisabled();
 }
 
 const resetear = () => {
-  screen.textContent = "";
   operandoa = 0;
   operandob = 0;
   operacion = "";
+  delet();
+}
+
+const resetDisabled = () => {
+  sum.removeAttribute('disabled');
+  sub.removeAttribute('disabled');
+  mult.removeAttribute('disabled');
+  div.removeAttribute('disabled');
 }
 
 const resolve = () => {
-  if (operacion === '.') {
-    
-  }
-  switch(operacion){
-    case "+":
-      res = parseFloat(operandoa) + parseFloat(operandob);
-      break;
-    case "-":
-        res = parseFloat(operandoa) - parseFloat(operandob);
+  // if (operandob != '') {
+    switch(operacion){
+      case "+":
+        res = parseFloat(operandoa) + parseFloat(operandob);
+        sum.removeAttribute('disabled');
         break;
-    case "x":
-      res = parseFloat(operandoa) * parseFloat(operandob);
-      break;
-    case "/":
-      res = parseFloat(operandoa) / parseFloat(operandob);
-      break;
-    default:
-      res = parseFloat(operandob); // si no tiene operandoa
-  }
-  delet();
+      case "-":
+        res = parseFloat(operandoa) - parseFloat(operandob);
+        sub.removeAttribute('disabled');
+        break;
+      case "x":
+        res = parseFloat(operandoa) * parseFloat(operandob);
+        mult.removeAttribute('disabled');
+        break;
+      case "/":
+        res = parseFloat(operandoa) / parseFloat(operandob);
+        div.removeAttribute('disabled');
+        break;
+      // default:
+        // res = parseFloat(validOperando(operandoa)); // si no tiene operandoa
+        // resetear();
+    }
+  // }
+  // else {
+
+  // }
+
+  resetear();
   screen.textContent = res.toLocaleString('es-MX');
   console.log(res);
 }
