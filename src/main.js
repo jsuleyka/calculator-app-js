@@ -1,4 +1,4 @@
-const body = document.querySelector('body');
+const body = document.querySelector('body'); 
 const clSwitch1 = document.getElementById('switch1');
 const clSwitch2 = document.getElementById('switch2');
 const clSwitch3 = document.getElementById('switch3');
@@ -73,28 +73,28 @@ dec.addEventListener('click', (e) => {
 });
 
 sum.addEventListener('click', (e) => {
-  validOperando(operandoa);
+  operandoa = screen.textContent;
   operacion = "+";
   delet();
   sum.setAttribute('disabled', '');
 });
 
 sub.addEventListener('click', (e) => {
-  validOperando(operandoa); 
+  operandoa = screen.textContent;
   operacion = "-";
   delet();
   sub.setAttribute('disabled', '');
 });
 
 mult.addEventListener('click', (e) => {
-  validOperando(operandoa); 
+  operandoa = screen.textContent;
   operacion = "x";
   delet();
   mult.setAttribute('disabled', '');
 });
 
 div.addEventListener('click', (e) => {
-  validOperando(operandoa);
+  operandoa = screen.textContent;
   operacion = "/";
   delet();
   div.setAttribute('disabled', '');
@@ -109,28 +109,9 @@ reset.addEventListener('click', (e) => {
 });
 
 equal.addEventListener('click', (e) => {
-  validOperando(operandob); 
-  console.log(validOperando(operandob));
-    resolve();
+  operandob = screen.textContent;
+  resolve();
 });
-
-const validOperando = (x) => {
-  x = screen.textContent;
-  console.log(x);
-  if (x === undefined) {
-    x = 0;
-  }
-
-  if (x === NaN) {
-    x = 0;
-  }
-
-  if (x === '') {
-    x = 0;
-    console.log(x);
-  }
-  return x;
-}
 
 const delet = () => {
   screen.textContent = "";
@@ -152,7 +133,10 @@ const resetDisabled = () => {
 }
 
 const resolve = () => {
-  // if (operandob != '') {
+  if (!operandoa || !operandob) {
+    res = 0;
+  }
+  else {
     switch(operacion){
       case "+":
         res = parseFloat(operandoa) + parseFloat(operandob);
@@ -170,16 +154,9 @@ const resolve = () => {
         res = parseFloat(operandoa) / parseFloat(operandob);
         div.removeAttribute('disabled');
         break;
-      // default:
-        // res = parseFloat(validOperando(operandoa)); // si no tiene operandoa
-        // resetear();
     }
-  // }
-  // else {
-
-  // }
+  }
 
   resetear();
   screen.textContent = res.toLocaleString('es-MX');
-  console.log(res);
 }
